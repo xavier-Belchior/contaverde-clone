@@ -1,5 +1,9 @@
+import Hero from "../components/Hero";
+
 export default function HomePage() {
     return(
-        <div>HomePage</div>
+        <main className=" w-full flex flex-col">
+            <Hero/>
+        </main>
     )
 }

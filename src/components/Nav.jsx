@@ -1,4 +1,4 @@
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDown, Phone, TextAlignEnd } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 
@@ -28,12 +28,14 @@ export default function Nav() {
     },
   ];
   return (
-    <div className="flex  items-center px-8 py-4 ">
-      <h1 className="text-2xl font-bold text-relaxed text-white ">
-        Conta Verde
-      </h1>
+    <header className="p-6 md:p-8 flex items-center justify-between w-full fixed top-0 left-0 z-50">
+      <div className="text-2xl font-bold font-['Releway'] text-relaxed text-white tracking-tight z-50  ">
+       Conta Verde
 
-      <nav className="m-auto bg-[#559C0D] px-4.5 py-2   rounded-4xl ">
+        <span className="text-xs  align-top font-light">*</span>
+      </div>
+
+      <nav className="absolute hidden sm:block  bg-[#559C0D] px-4.5 py-2   rounded-4xl z-10 left-1/2 -translate-x-1/2 ">
         <ul className="flex items-center gap-8 text-white group font-normal text-tight">
           {navItems.map((item) => (
             <li key={item.label} className="relative">
@@ -50,7 +52,7 @@ export default function Nav() {
                   onClick={item.hasDropdown ? ()=>setIsProductsOpen(!isProductsOpen): undefined}
                   className={({ isActive }) =>
                     isActive
-                      ? "flex items-center transition-color duration-300  bg-white text-green-600 px-8 py-2 rounded-4xl "
+                      ? "flex gap-2 items-center transition-color duration-300  bg-white text-green-600 px-8 py-2 rounded-4xl "
                       : "flex items-center transition-all duration-300 hover:opacity-100 opacity-80 whitespace-nowrap"
                   }
                 >
@@ -61,9 +63,9 @@ export default function Nav() {
                       
                      
                      {isProductsOpen &&(
-                      <ul className="absolute bg-white  whitespace-nowrap p-2  top-10 left-0 w-full flex flex-col justify-center items-center gap-2 mt-2 rounded-xl shadow-lg z-10">
-                        <li className="bg-white text-green-600  ">
-                         <Link to="/produtos" onClick={()=>setIsProductsOpen(false)}>Mama Negocio</Link>
+                      <ul className="absolute bg-white  whitespace-wrap p-2  top-10 left-0 w-full flex flex-col justify-center items-center gap-2 mt-2 rounded-xl shadow-lg z-10">
+                        <li className="bg-white text-green-600  " onClick={()=>setIsProductsOpen(false)}>
+                         <Link to="/produtos" >Mama Negocio</Link>
                         </li>
                         <li className="bg-white text-green-600 " onClick={()=>setIsProductsOpen(false)}>
                          <Link to="/funciona">Fezada Propina</Link>
@@ -85,6 +87,8 @@ export default function Nav() {
           </li>
         </ul>
       </nav>
-    </div>
+ 
+      <div className="block sm:hidden text-white"><TextAlignEnd  /></div>
+    </header>
   );
 }
