@@ -28,11 +28,11 @@ export default function Nav() {
     },
   ];
   return (
-    <header className="p-6 md:p-8 flex items-center justify-between w-full fixed top-0 left-0 z-50">
+    <header className="p-6 md:px-16  flex items-center justify-between w-full fixed top-0 left-0 z-50">
       <div className="text-2xl font-bold font-['Releway'] text-relaxed text-white tracking-tight z-50  ">
        Conta Verde
 
-        <span className="text-xs  align-top font-light">*</span>
+        <span className="text-sm align-top font-light">*</span>
       </div>
 
       <nav className="absolute hidden sm:block  bg-[#559C0D] px-4.5 py-2   rounded-4xl z-10 left-1/2 -translate-x-1/2 ">

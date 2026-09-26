@@ -1,12 +1,12 @@
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen  flex items-stretch  justify-center p-8 bg-[url(./assets/bg-hero.jpg)] bg-cover bg-center bg-no-repeat">
+    <section className="relative w-full h-screen px-4 md:px-8 lg:px-16  flex items-stretch  justify-center p-8 bg-[url(./assets/bg-hero.jpg)] bg-cover bg-center bg-no-repeat">
       {/*overlay background*/}
       <div className="absolute inset-0  opacity-60 bg-linear-to-br from-[#559C0D] to-transparent pointer-events-none "></div>
       <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_left,#A49090_0%,transparent_70%)] pointer-events-none"></div>
       <div className="absolute inset-0  mix-blend-overlay opacity-30 pointer-events-none"></div>
 
-      <div className="relative mt-20  z-10 flex flex-col items-center justify-center text-center gap-4 text-white max-w-200">
+      <div className="relative mt-30  z-10 flex flex-col items-center justify-center text-center gap-4 text-white max-w-200">
         <h1 className="text-xl lg:text-3xl  font-bold text-relaxed ">
           Chega de esperar por oportunidades — crie as suas. Liberte o potencial
           do seu negócio com crédito rápido, simples e pensado para quem quer
